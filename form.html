@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluseun Adeboyejo Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .logo {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Header -->
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo & Title -->
+    <div class="flex items-center space-x-2">
+        <div class="logo bg-white-100 p-1 rounded-full">
+            <img src="/img/logo.jpg" alt="Logo" class="h-10 w-10 object-cover rounded-full" />
+        </div>
+        <h1 class="text-xl font-bold text-blue-800">Oluseun Adeboyejo Foundation</h1>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-blue-800 hover:text-blue-600 font-medium">Home</a>
+        <a href="index.html" class="text-blue-800 hover:text-blue-600 font-medium">About Us</a>
+        <a href="#programs" class="text-blue-800 hover:text-blue-600 font-medium">Our Programs</a>
+        <a href="form.html" class="text-blue-800 hover:text-blue-600 active font-medium">Scholarship</a>
+        <a href="#contact" class="text-blue-800 hover:text-blue-600 font-medium">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+    </button>
+</div>
+
+<!-- Mobile Navigation (Hidden by default) -->
+<div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 bg-white shadow-md">
+    <a href="index.html" class="block text-blue-800 hover:text-blue-600 font-medium">Home</a>
+    <a href="#about" class="block text-blue-800 hover:text-blue-600 font-medium">About Us</a>
+    <a href="#programs" class="block text-blue-800 hover:text-blue-600 font-medium">Our Programs</a>
+    <a href="form.html" class="block text-blue-800 hover:text-blue-600 active font-medium">Scholarship</a>
+    <a href="#contact" class="block text-blue-800 hover:text-blue-600 font-medium">Contact</a>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    button.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
+
+        
+        
+        <!-- Mobile Navigation -->
+    </header>
+
+    <!-- Scholarship Application Hero
+    <section class="hero-bg text-white py-20 md:py-28">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Scholarship Application</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Apply for our educational scholarship program to support your academic journey.</p>
+            <div class="flex justify-center">
+                <div class="bg-blue-600 bg-opacity-80 px-4 py-2 rounded-full text-sm">
+                    Deadline: December 15, 2023
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Scholarship Application Form -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Application Form</h2>
+                    <p class="text-gray-600 mb-8">Please fill out all fields accurately. Fields marked with <span class="text-red-500">*</span> are required.</p>
+                    
+                    <form id="scholarshipForm" class="space-y-6">
+                        <!-- Personal Information -->
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-bold text-blue-800 mb-4 flex items-center">
+                                <i class="fas fa-user-circle mr-2"></i> Personal Information
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="fullName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="contactNumber" class="block text-gray-700 font-medium mb-2">Contact Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="contactNumber" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="address" class="block text-gray-700 font-medium mb-2">Residential Address <span class="text-red-500">*</span></label>
+                                    <input type="text" id="address" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="state" class="block text-gray-700 font-medium mb-2">State of Origin <span class="text-red-500">*</span></label>
+                                    <select id="state" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select State</option>
+                                        <option value="Abia">Abia</option>
+                                        <option value="Adamawa">Adamawa</option>
+                                        <option value="Akwa Ibom">Akwa Ibom</option>
+                                        <option value="Anambra">Anambra</option>
+                                        <option value="Bauchi">Bauchi</option>
+                                        <option value="Bayelsa">Bayelsa</option>
+                                        <option value="Benue">Benue</option>
+                                        <option value="Borno">Borno</option>
+                                        <option value="Cross River">Cross River</option>
+                                        <option value="Delta">Delta</option>
+                                        <option value="Ebonyi">Ebonyi</option>
+                                        <option value="Edo">Edo</option>
+                                        <option value="Ekiti">Ekiti</option>
+                                        <option value="Enugu">Enugu</option>
+                                        <option value="Gombe">Gombe</option>
+                                        <option value="Imo">Imo</option>
+                                        <option value="Jigawa">Jigawa</option>
+                                        <option value="Kaduna">Kaduna</option>
+                                        <option value="Kano">Kano</option>
+                                        <option value="Katsina">Katsina</option>
+                                        <option value="Kebbi">Kebbi</option>
+                                        <option value="Kogi">Kogi</option>
+                                        <option value="Kwara">Kwara</option>
+                                        <option value="Lagos">Lagos</option>
+                                        <option value="Nasarawa">Nasarawa</option>
+                                        <option value="Niger">Niger</option>
+                                        <option value="Ogun">Ogun</option>
+                                        <option value="Ondo">Ondo</option>
+                                        <option value="Osun">Osun</option>
+                                        <option value="Oyo">Oyo</option>
+                                        <option value="Plateau">Plateau</option>
+                                        <option value="Rivers">Rivers</option>
+                                        <option value="Sokoto">Sokoto</option>
+                                        <option value="Taraba">Taraba</option>
+                                        <option value="Yobe">Yobe</option>
+                                        <option value="Zamfara">Zamfara</option>
+                                        <option value="FCT">Federal Capital Territory</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="lga" class="block text-gray-700 font-medium mb-2">Local Government Area <span class="text-red-500">*</span></label>
+                                    <input type="text" id="lga" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Academic Information -->
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-bold text-blue-800 mb-4 flex items-center">
+                                <i class="fas fa-graduation-cap mr-2"></i> Academic Information
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="school" class="block text-gray-700 font-medium mb-2">School/Institution <span class="text-red-500">*</span></label>
+                                    <input type="text" id="school" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="department" class="block text-gray-700 font-medium mb-2">Department/Faculty <span class="text-red-500">*</span></label>
+                                    <input type="text" id="department" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="level" class="block text-gray-700 font-medium mb-2">Current Level <span class="text-red-500">*</span></label>
+                                    <select id="level" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select Level</option>
+                                        <option value="100">100 Level</option>
+                                        <option value="200">200 Level</option>
+                                        <option value="300">300 Level</option>
+                                        <option value="400">400 Level</option>
+                                        <option value="500">500 Level</option>
+                                        <option value="600">600 Level</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="matNo" class="block text-gray-700 font-medium mb-2">Matriculation Number <span class="text-red-500">*</span></label>
+                                    <input type="text" id="matNo" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="cgpa" class="block text-gray-700 font-medium mb-2">Current CGPA <span class="text-red-500">*</span></label>
+                                    <input type="number" id="cgpa" min="0" max="5" step="0.01" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Document Upload -->
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-bold text-blue-800 mb-4 flex items-center">
+                                <i class="fas fa-file-upload mr-2"></i> Document Upload
+                            </h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Passport Photograph <span class="text-red-500">*</span></label>
+                                    <div id="passportUpload" class="file-upload p-6 text-center cursor-pointer">
+                                        <input type="file" id="passportPhoto" accept="image/*" class="hidden" required>
+                                        <div class="flex flex-col items-center justify-center">
+                                            <i class="fas fa-camera text-4xl text-gray-400 mb-3"></i>
+                                            <p class="text-gray-600">Click to upload or drag and drop</p>
+                                            <p class="text-sm text-gray-500 mt-1">JPG or PNG (Max 2MB)</p>
+                                        </div>
+                                    </div>
+                                    <div id="passportPreview" class="mt-3 hidden">
+                                        <p class="text-sm text-green-600">File selected: <span id="passportFileName"></span></p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Academic Transcript <span class="text-red-500">*</span></label>
+                                    <div id="transcriptUpload" class="file-upload p-6 text-center cursor-pointer">
+                                        <input type="file" id="academicTranscript" accept=".pdf,.jpg,.jpeg,.png" class="hidden" required>
+                                        <div class="flex flex-col items-center justify-center">
+                                            <i class="fas fa-file-alt text-4xl text-gray-400 mb-3"></i>
+                                            <p class="text-gray-600">Click to upload or drag and drop</p>
+                                            <p class="text-sm text-gray-500 mt-1">PDF, JPG or PNG (Max 5MB)</p>
+                                        </div>
+                                    </div>
+                                    <div id="transcriptPreview" class="mt-3 hidden">
+                                        <p class="text-sm text-green-600">File selected: <span id="transcriptFileName"></span></p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Letter of Identification <span class="text-red-500">*</span></label>
+                                    <div id="letterUpload" class="file-upload p-6 text-center cursor-pointer">
+                                        <input type="file" id="letterOfIdentification" accept=".pdf,.jpg,.jpeg,.png" class="hidden" required>
+                                        <div class="flex flex-col items-center justify-center">
+                                            <i class="fas fa-file-signature text-4xl text-gray-400 mb-3"></i>
+                                            <p class="text-gray-600">Click to upload or drag and drop</p>
+                                            <p class="text-sm text-gray-500 mt-1">PDF, JPG or PNG (Max 5MB)</p>
+                                        </div>
+                                    </div>
+                                    <div id="letterPreview" class="mt-3 hidden">
+                                        <p class="text-sm text-green-600">File selected: <span id="letterFileName"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Declaration -->
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-bold text-blue-800 mb-4 flex items-center">
+                                <i class="fas fa-file-contract mr-2"></i> Declaration
+                            </h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="declaration" required class="mt-1 mr-3">
+                                    <label for="declaration" class="text-gray-700">
+                                        I hereby declare that all the information provided in this application is true and correct to the best of my knowledge. I understand that any false statement may lead to disqualification.
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="consent" required class="mt-1 mr-3">
+                                    <label for="consent" class="text-gray-700">
+                                        I consent to the processing of my personal data for the purposes of this scholarship application and any related communications.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+       <footer class="bg-blue-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="logo bg-white-100 p-1 rounded-full">
+                            <img src="/img/logo.jpg" alt="Logo" class="h-10 w-10 object-cover rounded-full" />
+                        </div>
+                        <h1 class="text-xl font-bold text-white-800">Oluseun Adeboyejo Foundation</h1>
+                    </div>
+                    <p class="mb-4">Empowering lives and building futures through education, healthcare, and community development initiatives.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-300">About Us</a></li>
+                        <li><a href="#programs" class="hover:text-blue-300">Our Programs</a></li>
+                        <li><a href="#scholarship" class="hover:text-blue-300">Scholarship</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Education & Scholarship</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Healthcare Initiative</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Skills Acquisition</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Community Development</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Women Empowerment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>12 Foundation Avenue, Ondo, Lagos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+234 812 345 6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@oluseunadeboyejofoundation.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Oluseun Adeboyejo Foundation. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-sm hover:text-blue-300">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-blue-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // File Upload Handling
+        function setupFileUpload(uploadDivId, fileInputId, previewDivId, fileNameSpanId) {
+            const uploadDiv = document.getElementById(uploadDivId);
+            const fileInput = document.getElementById(fileInputId);
+            const previewDiv = document.getElementById(previewDivId);
+            const fileNameSpan = document.getElementById(fileNameSpanId);
+            
+            // Click handler
+            uploadDiv.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // Drag and drop handlers
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadDiv.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadDiv.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadDiv.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                uploadDiv.classList.add('dragover');
+            }
+            
+            function unhighlight() {
+                uploadDiv.classList.remove('dragover');
+            }
+            
+            // File drop handler
+            uploadDiv.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                if (files.length > 0) {
+                    fileInput.files = files;
+                    updatePreview();
+                }
+            }
+            
+            // File input change handler
+            fileInput.addEventListener('change', updatePreview);
+            
+            function updatePreview() {
+                if (fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    fileNameSpan.textContent = file.name;
+                    previewDiv.classList.remove('hidden');
+                }
+            }
+        }
+        
+        // Setup all file uploads
+        setupFileUpload('passportUpload', 'passportPhoto', 'passportPreview', 'passportFileName');
+        setupFileUpload('transcriptUpload', 'academicTranscript', 'transcriptPreview', 'transcriptFileName');
+        setupFileUpload('letterUpload', 'letterOfIdentification', 'letterPreview', 'letterFileName');
+        
+        // Form Submission
+        document.getElementById('scholarshipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show a success message
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Show success message
+                alert('Your scholarship application has been submitted successfully! We will contact you via email regarding the next steps.');
+                
+                // Reset form
+                this.reset();
+                document.getElementById('passportPreview').classList.add('hidden');
+                document.getElementById('transcriptPreview').classList.add('hidden');
+                document.getElementById('letterPreview').classList.add('hidden');
+                
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 2000);
+        });
+        
+        // State and LGA relationship (simplified example)
+        document.getElementById('state').addEventListener('change', function() {
+            // In a real application, you would fetch LGAs for the selected state from a database
+            const lgaInput = document.getElementById('lga');
+            lgaInput.value = ''; // Clear previous value
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluseun Adeboyejo Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .logo {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="logo bg-white-100 p-1 rounded-full">
+                    <img src="/img/logo.jpg" alt="Logo" class="h-10 w-10 object-cover rounded-full" />
+                </div>
+                <h1 class="text-xl font-bold text-blue-800">Oluseun Adeboyejo Foundation</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-blue-800 hover:text-blue-600 font-medium">Home</a>
+                <a href="index.html" class="text-blue-800 hover:text-blue-600 font-medium">About Us</a>
+                <a href="#programs" class="text-blue-800 hover:text-blue-600 font-medium">Our Programs</a>
+                <a href="form.html" class="text-blue-800 hover:text-blue-600 active font-medium">Scholarship</a>
+                <a href="#contact" class="text-blue-800 hover:text-blue-600 font-medium">Contact</a>
+            </nav>
+        
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 bg-white shadow-md">
+            <a href="index.html" class="block text-blue-800 hover:text-blue-600 font-medium">Home</a>
+            <a href="#about" class="block text-blue-800 hover:text-blue-600 font-medium">About Us</a>
+            <a href="#programs" class="block text-blue-800 hover:text-blue-600 font-medium">Our Programs</a>
+            <a href="form.html" class="block text-blue-800 hover:text-blue-600 active font-medium">Scholarship</a>
+            <a href="#contact" class="block text-blue-800 hover:text-blue-600 font-medium">Contact</a>
+        </div>
+        
+        <!-- JavaScript -->
+        <script>
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+        
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        </script>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Empowering Lives, Building Futures</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">The Oluseun Adeboyejo Foundation is committed to creating opportunities through education, healthcare, and community development.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#scholarship" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">Apply for Scholarship</a>
+                <a href="#donate" class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-3 px-6 rounded-full transition duration-300">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">About Our Foundation</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="About Us" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Our Story</h3>
+                    <p class="text-gray-700 mb-4">Founded by Hon. Oluseun Adeboyejo, our foundation was established with the vision to create sustainable impact in communities across Nigeria through education, healthcare, and economic empowerment initiatives.</p>
+                    <p class="text-gray-700 mb-6">Over the years, we've touched thousands of lives through our various programs, with a special focus on youth development and education.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">Our Mission</h4>
+                            <p class="text-gray-700">To empower individuals and communities through education, healthcare, and sustainable development programs.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">Our Vision</h4>
+                            <p class="text-gray-700">A Nigeria where every individual has equal access to quality education and opportunities for personal growth.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Programs Section -->
+    <section id="programs" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Our Programs</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Education & Scholarship</h3>
+                    <p class="text-gray-700 mb-4">We provide scholarships to deserving students from underprivileged backgrounds to pursue quality education at all levels.</p>
+                    <a href="#scholarship" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-heartbeat text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Healthcare Initiative</h3>
+                    <p class="text-gray-700 mb-4">Our medical outreach programs provide free healthcare services to rural communities with limited access to medical facilities.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-briefcase text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Skills Acquisition</h3>
+                    <p class="text-gray-700 mb-4">We offer vocational training and entrepreneurship programs to empower youths and women with marketable skills.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Community Development</h3>
+                    <p class="text-gray-700 mb-4">We partner with local communities to implement sustainable development projects including clean water initiatives.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-female text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Women Empowerment</h3>
+                    <p class="text-gray-700 mb-4">Our programs focus on empowering women through education, skills training, and micro-finance opportunities.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Program 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md transition duration-300 card-hover">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-seedling text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Agricultural Support</h3>
+                    <p class="text-gray-700 mb-4">We provide training and resources to small-scale farmers to improve agricultural productivity and food security.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship Application Section --
+    <section id="scholarship" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Scholarship Application</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-4">Fill out the form below to apply for our educational scholarship program. Please ensure all information provided is accurate.</p>
+            </div>
+            
+            <form id="scholarshipForm" class="max-w-4xl mx-auto bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Personal Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name*</label>
+                            <input type="text" id="fullName" name="fullName" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address*</label>
+                            <input type="email" id="email" name="email" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="age" class="block text-gray-700 font-medium mb-2">Age*</label>
+                            <input type="number" id="age" name="age" min="16" max="30" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="address" class="block text-gray-700 font-medium mb-2">Contact Address*</label>
+                            <textarea id="address" name="address" rows="2" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500"></textarea>
+                        </div>
+                        <div>
+                            <label for="state" class="block text-gray-700 font-medium mb-2">State of Origin*</label>
+                            <select id="state" name="state" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                                <option value="">Select State</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Zamfara">Zamfara</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="FCT">Federal Capital Territory</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lga" class="block text-gray-700 font-medium mb-2">Local Government Area*</label>
+                            <input type="text" id="lga" name="lga" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Educational Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="school" class="block text-gray-700 font-medium mb-2">School/Institution*</label>
+                            <input type="text" id="school" name="school" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="department" class="block text-gray-700 font-medium mb-2">Department/Faculty*</label>
+                            <input type="text" id="department" name="department" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="matricNumber" class="block text-gray-700 font-medium mb-2">Matriculation Number*</label>
+                            <input type="text" id="matricNumber" name="matricNumber" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="level" class="block text-gray-700 font-medium mb-2">Current Level*</label>
+                            <select id="level" name="level" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                                <option value="">Select Level</option>
+                                <option value="100">100 Level</option>
+                                <option value="200">200 Level</option>
+                                <option value="300">300 Level</option>
+                                <option value="400">400 Level</option>
+                                <option value="500">500 Level</option>
+                                <option value="ND I">ND I</option>
+                                <option value="ND II">ND II</option>
+                                <option value="HND I">HND I</option>
+                                <option value="HND II">HND II</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="cgpa" class="block text-gray-700 font-medium mb-2">Current CGPA*</label>
+                            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="5" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Documents Upload</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="passportPhoto" class="block text-gray-700 font-medium mb-2">Passport Photograph*</label>
+                            <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload a clear passport photograph (max 2MB)</p>
+                        </div>
+                        <div>
+                            <label for="matricCard" class="block text-gray-700 font-medium mb-2">Matriculation Card*</label>
+                            <input type="file" id="matricCard" name="matricCard" accept="image/*,.pdf" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload scanned copy of your matric card (PDF or image)</p>
+                        </div>
+                        <div>
+                            <label for="admissionLetter" class="block text-gray-700 font-medium mb-2">Admission Letter*</label>
+                            <input type="file" id="admissionLetter" name="admissionLetter" accept="image/*,.pdf" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload scanned copy of admission letter (PDF or image)</p>
+                        </div>
+                        <div>
+                            <label for="resultTranscript" class="block text-gray-700 font-medium mb-2">Academic Transcript*</label>
+                            <input type="file" id="resultTranscript" name="resultTranscript" accept="image/*,.pdf" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload your most recent academic transcript (PDF or image)</p>
+                        </div>
+                        <div>
+                            <label for="birthCertificate" class="block text-gray-700 font-medium mb-2">Birth Certificate/Age Declaration*</label>
+                            <input type="file" id="birthCertificate" name="birthCertificate" accept="image/*,.pdf" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload birth certificate or age declaration (PDF or image)</p>
+                        </div>
+                        <div>
+                            <label for="otherDocuments" class="block text-gray-700 font-medium mb-2">Other Supporting Documents</label>
+                            <input type="file" id="otherDocuments" name="otherDocuments" multiple class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                            <p class="text-sm text-gray-500 mt-1">Upload any other relevant documents (optional)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Declaration</h3>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-start mb-4">
+                            <input type="checkbox" id="declaration" name="declaration" required class="mt-1">
+                            <label for="declaration" class="ml-2 text-gray-700">I hereby declare that all the information provided in this application is true and correct to the best of my knowledge. I understand that any false information may lead to disqualification.</label>
+                        </div>
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required class="mt-1">
+                            <label for="terms" class="ml-2 text-gray-700">I agree to the terms and conditions of the Oluseun Adeboyejo Foundation Scholarship program and consent to the processing of my personal data for the purpose of this application.</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Work in Action</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">See the impact of your support through these moments captured in the field.</p>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
+        </div>
+
+        <!-- Gallery Container (Hidden initially) -->
+        <div id="gallery-items" class="hidden grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Gallery Item -->
+            <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                <a href="/img/5.jpg" data-lightbox="gallery" data-title="Education program">
+                    <img src="/img/5.jpg" alt="Education program"
+                        class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                </a>
+            </div>
+            <!-- Repeat for other images -->
+            <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                <a href="/img/5.jpg" data-lightbox="gallery" data-title="Medical camp">
+                    <img src="/img/5.jpg" alt="Medical camp"
+                        class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                </a>
+            </div>
+            <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                <a href="/img/5.jpg" data-lightbox="gallery" data-title="Clean water project">
+                    <img src="/img/5.jpg" alt="Clean water project"
+                        class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                </a>
+            </div>
+            <!-- Add more as needed -->
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-12">
+            <button id="view-gallery-button" class="bg-transparent hover:bg-green-800 text-green-800 hover:text-white font-bold px-8 py-3 rounded-full border-2 border-green-800 transition">
+                View Full Gallery
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox2 -->
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+<!-- Show Gallery Script -->
+<script>
+    document.getElementById('view-gallery-button').addEventListener('click', function () {
+        const gallery = document.getElementById('gallery-items');
+        gallery.classList.remove('hidden');
+        this.classList.add('hidden'); // Hide button after click (optional)
+    });
+</script>
+
+
+
+    <!-- Success Stories Section
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Success Stories</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-4">Hear from some of our scholarship beneficiaries and program participants</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Amina Yusuf" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-800">Amina Yusuf</h4>
+                            <p class="text-gray-600 text-sm">Medicine, University of Lagos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The Oluseun Adeboyejo Foundation scholarship gave me the opportunity to pursue my dream of becoming a doctor. Without this support, I wouldn't have been able to afford my education."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Emeka Okoro" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-800">Emeka Okoro</h4>
+                            <p class="text-gray-600 text-sm">Computer Science, UNN</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Through the foundation's skills acquisition program, I learned software development and now run a successful tech startup employing 5 people. The foundation changed my life."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatima Bello" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-800">Fatima Bello</h4>
+                            <p class="text-gray-600 text-sm">Nursing, ABU Zaria</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The foundation not only paid my tuition but also provided mentorship and career guidance. I'm now a registered nurse giving back to my community, just like they taught us."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Support Our Cause</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+                <p class="max-w-2xl mx-auto mt-4">Your donation helps us continue our mission of empowering lives and building futures through education and community development.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Donation Option 1 -->
+                <div class="bg-white text-blue-800 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sponsor a Student</h3>
+                    <p class="text-gray-700 mb-4">Your donation of ₦50,000 can cover one semester's tuition for a student in need.</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Donate Now</button>
+                </div>
+                
+                <!-- Donation Option 2 -->
+                <div class="bg-white text-blue-800 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Medical Outreach</h3>
+                    <p class="text-gray-700 mb-4">₦100,000 can provide free medical care for 50 people in rural communities.</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Donate Now</button>
+                </div>
+                
+                <!-- Donation Option 3 -->
+                <div class="bg-white text-blue-800 p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Skills Center</h3>
+                    <p class="text-gray-700 mb-4">₦250,000 can equip our vocational training center with needed tools and materials.</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Donate Now</button>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-900 p-6 rounded-lg max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-center">Other Ways to Give</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold mb-2">Bank Transfer</h4>
+                        <p class="mb-1">Account Name: Oluseun Adeboyejo Foundation</p>
+                        <p class="mb-1">Bank: First Bank of Nigeria</p>
+                        <p class="mb-1">Account Number: 1234567890</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Mobile Payments</h4>
+                        <div class="flex space-x-4 justify-center">
+                            <div class="text-center">
+                                <i class="fab fa-cc-visa text-3xl mb-2"></i>
+                                <p>Visa</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fab fa-cc-mastercard text-3xl mb-2"></i>
+                                <p>Mastercard</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-mobile-alt text-3xl mb-2"></i>
+                                <p>Mobile Money</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-4">We'd love to hear from you. Reach out to us for inquiries, partnerships, or volunteer opportunities.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="contactName" class="block text-gray-700 font-medium mb-2">Your Name*</label>
+                            <input type="text" id="contactName" name="contactName" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contactEmail" class="block text-gray-700 font-medium mb-2">Email Address*</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contactSubject" class="block text-gray-700 font-medium mb-2">Subject*</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="contactMessage" class="block text-gray-700 font-medium mb-2">Message*</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required class="w-full form-input px-4 py-2 border rounded-lg focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Our Contact Information</h3>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-blue-800 mb-2">Head Office</h4>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+                                <p>12 Foundation Avenue, Akure, Ondo State, Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-blue-800 mb-2">Contact Details</h4>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-phone-alt text-blue-600 mr-3"></i>
+                                <p>+234 812 345 6789</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                                <p>info@oluseunadeboyejofoundation.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-blue-800 mb-2">Working Hours</h4>
+                            <div class="flex">
+                                <i class="fas fa-clock text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="mb-1">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                    <p>Saturday: 9:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-blue-800 mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="logo bg-white-100 p-1 rounded-full">
+                            <img src="/img/logo.jpg" alt="Logo" class="h-10 w-10 object-cover rounded-full" />
+                        </div>
+                        <h1 class="text-xl font-bold text-white-800">Oluseun Adeboyejo Foundation</h1>
+                    </div>
+                    <p class="mb-4">Empowering lives and building futures through education, healthcare, and community development initiatives.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-300">About Us</a></li>
+                        <li><a href="#programs" class="hover:text-blue-300">Our Programs</a></li>
+                        <li><a href="#scholarship" class="hover:text-blue-300">Scholarship</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Education & Scholarship</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Healthcare Initiative</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Skills Acquisition</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Community Development</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Women Empowerment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>12 Foundation Avenue, Ondo, Lagos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+234 812 345 6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@oluseunadeboyejofoundation.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Oluseun Adeboyejo Foundation. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-sm hover:text-blue-300">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-blue-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const scholarshipForm = document.getElementById('scholarshipForm');
+        
+        scholarshipForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            
+            alert('Thank you for your scholarship application! We have received your information and will contact you if you are shortlisted.');
+            
+            // Reset the form
+            scholarshipForm.reset();
+            
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle (would need more implementation for full functionality)
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Mobile menu would open here. In a full implementation, this would show/hide a mobile menu.');
+        });
+    </script>
+</body>
+</html>
